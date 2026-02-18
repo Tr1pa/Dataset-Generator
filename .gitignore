@@ -205,3 +205,23 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Datasets
+raw_images/
+augmented_dataset/
+generated_dataset/
+dataset_yolo/train/
+dataset_yolo/val/
+test_predictions/
+
+# YOLO logs and caches
+runs/detect/
+**/labels.cache
+
+# Python
+__pycache__/
+.venv/
+.env
+
+# Weights (keep only weights/ folder content manually if needed)
+runs/metro_damage/train/

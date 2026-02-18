@@ -1,0 +1,12 @@
+ultralytics
+transformers
+torch
+torchvision
+requests
+opencv-python
+pillow
+numpy
+python-dotenv
+onnx
+onnxslim
+onnxruntime
