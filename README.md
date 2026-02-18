@@ -1,58 +1,50 @@
-# Metro Damage AI Detection 🚇🤖
+# 🚇 MetroSynth: Synthetic Dataset Generator & Damage Detector
 
-[Русское описание ниже](#russian-description)
+[Russian Description](#russian-description)
 
-This project provides a complete end-to-end pipeline for detecting interior damage in metro cars (damaged seats, dirty floors, and corroded metal). It solves the problem of data scarcity by using **Synthetic Data Generation** via state-of-the-art AI models.
+**MetroSynth** is a professional framework for creating high-quality synthetic datasets and training AI models to detect interior damage in public transport. It uses generative AI to solve the "data scarcity" problem in industrial environments.
 
-## 🌟 Key Features
-- **AI-Driven Synthesis:** Uses generative models (default: `gpt-5-image-mini` via OpenRouter) to create realistic training data.
-- **Customizable:** You can swap the generation model in `generate_data.py` to `flux-1-schnell`, `stable-diffusion-3`, etc.
-- **Full Pipeline:** From API-based generation and heavy augmentation to YOLOv8 training and ONNX export.
-- **High Accuracy:** The model achieved an **mAP50-95 of 0.995** on the synthetic validation set.
+## 🌟 Key Concept
+Instead of waiting for real damage to occur, this project **generates it**. By combining Large Vision Models with the YOLOv8 architecture, we can simulate thousands of repair scenarios and train a robust detector before a single real photo is even taken.
+
+## 🛠 Features
+- **Prompt-Driven Generation:** All car styles and damage types are defined in `prompts.json`.
+- **AI Engine:** Defaulted to `gpt-5-image-mini` via OpenRouter, but compatible with **Flux.1**, **SDXL**, or **DALL-E**.
+- **Heavy Augmentation:** Custom filters to simulate CCTV noise, poor lighting, and JPEG artifacts.
+- **YOLOv8 Integration:** Fully automated training pipeline with ONNX export.
 
 ## 🚀 Execution Order
-To build the project from scratch, run the scripts in this specific order:
-
-1.  **`generate_data.py`**: Connects to OpenRouter API to generate the initial set of images based on Moscow Metro car styles (Old, Mid-era, and Modern).
-2.  **`augment.py`**: Applies various filters (noise, blur, rotation, color shifts) to the generated images to multiply the dataset size.
-3.  **`data.py`**: Automatically splits the augmented data into `train` and `val` sets and creates the `data.yaml` file for YOLO.
-4.  **`main.py`**: The primary orchestrator. Run `python main.py all` to perform training (50 epochs), validation, testing on raw images, and export to ONNX.
-5.  **`test_on_real.py`**: Use this script to run the final `best.pt` model on any real-world photo (`image.png`).
-
-## 📊 Results
-- **Model:** YOLOv8 Nano (6.2 MB)
-- **Precision:** 0.998 / **Recall:** 0.997
-- **Inference:** ~60ms (CPU)
+1.  **`generate_data.py`**: Generation Engine. Reads `prompts.json` and creates the `generated_dataset`.
+2.  **`augment.py`**: Data Multiplier. Applies physical and digital distortions.
+3.  **`data.py`**: Dataset Orchestrator. Formats data for YOLOv8 (Train/Val split).
+4.  **`main.py`**: Training Pipeline. Runs training, validation, and exports to **ONNX**.
+5.  **`test_on_real.py`**: Production Test. Runs the model on real photos (`image.png`).
 
 ---
 
 <a name="russian-description"></a>
 
-# Детекция повреждений в метро (YOLOv8) 🚇🤖
+# 🚇 MetroSynth: Генератор синтетических данных и Детектор повреждений
 
-Проект представляет собой полный цикл разработки системы компьютерного зрения для обнаружения дефектов внутри вагонов метро (порванные сиденья, грязный пол, ржавчина). Главная фишка — **автоматическая генерация датасета**.
+**MetroSynth** — это фреймворк для создания высококачественных синтетических датасетов и обучения нейросетей для поиска повреждений интерьера (сиденья, пол, поручни). 
 
-## 🌟 Особенности
-- **Синтетика на базе ИИ:** Создание реалистичных обучающих данных с помощью нейросетей через OpenRouter API.
-- **Гибкость:** По умолчанию используется `gpt-5-image-mini`, но в `generate_data.py` можно выставить любую модель (Flux, SD3 и др.).
-- **Промышленный стандарт:** Легкая модель YOLOv8n, экспортированная в **ONNX** для работы в реальном времени.
-- **Высокие метрики:** mAP50-95 достигает **0.995** на валидационной выборке.
+## 🌟 Концепция
+Мы не ждем реальных поломок — мы **создаем их**. Используя мощь генеративного ИИ и архитектуру YOLOv8, проект позволяет имитировать тысячи сценариев износа и обучить модель еще до того, как будет собрана база реальных фотографий.
+
+## 🏗 Особенности
+- **Гибкие промты:** Описание вагонов и типов повреждений вынесено в `prompts.json`.
+- **ИИ-движок:** Поддержка любой модели через OpenRouter (от `gpt-5-image-mini` до `Flux.1`).
+- **Умная аугментация:** Имитация шумов камер видеонаблюдения, плохого освещения и артефактов сжатия.
+- **Промышленный стандарт:** Автоматический экспорт обученной модели в **ONNX**.
 
 ## 🚀 Порядок запуска
-Для воспроизведения результата запускайте файлы строго в этой последовательности:
+1.  **`generate_data.py`**: Движок генерации. Читает `prompts.json` и создает базовые фото.
+2.  **`augment.py`**: Множитель данных. Применяет программные фильтры и искажения.
+3.  **`data.py`**: Подготовка датасета. Разделяет данные на обучение и валидацию.
+4.  **`main.py`**: Конвейер обучения. Обучает YOLOv8 и делает экспорт в **ONNX**.
+5.  **`test_on_real.py`**: Тест на реальных данных. Проверяет готовую модель на файле `image.png`.
 
-1.  **`generate_data.py`**: Генерация базовых изображений через API. Создает сцены с повреждениями в стилистике Московского метрополитена.
-2.  **`augment.py`**: Программная аугментация (повороты, шумы, цветокоррекция). Увеличивает датасет в несколько раз для лучшей устойчивости модели.
-3.  **`data.py`**: Формирует структуру папок YOLO (Train/Val) и создает файл конфигурации `data.yaml`.
-4.  **`main.py`**: Основной конвейер. Команда `python main.py all` запустит обучение, проверку метрик, тест на папке `raw_images` и экспорт в ONNX.
-5.  **`test_on_real.py`**: Финальный проверочный скрипт для тестирования весов `best.pt` на реальном изображении (`image.png`).
-
-## 📊 Результаты
-- **Архитектура:** YOLOv8 Nano (всего 6.2 МБ)
-- **Точность (Precision):** 0.998 / **Полнота (Recall):** 0.997
-- **Скорость:** ~60 мс/кадр на обычном процессоре.
-
-## 🛠 Установка
-1. Клонируйте репозиторий.
-2. Создайте файл `.env` и вставьте: `OPENROUTER_API_KEY=ваш_ключ`.
-3. Установите библиотеки: `pip install -r requirements.txt`.
+## 📊 Результаты (YOLOv8 Nano)
+- **Вес модели:** 6.2 МБ
+- **Точность (mAP50-95):** 0.995
+- **Скорость:** ~60мс (CPU)

@@ -1,0 +1,33 @@
+{
+  "scenes": {
+    "old": "Interior of an old Soviet-style Moscow metro train carriage, one-point perspective looking down the narrow aisle. Vanishing point at the far end door. Eye-level shot. Rows of brown faux-leather padded bench seats along cream-colored walls. Wood-grain texture plastic wall panels. Grey-brown spotted linoleum floor. Chrome steel handrails and vertical poles. Dim warm yellowish longitudinal ceiling lights. Slightly narrow tunnel-like feel. No people. No text overlay. No watermark. Photorealistic, 8k.",
+    "mid": "Interior of a Russian subway car from the 2000s era, wide-angle one-point perspective down the center aisle. Rows of blue vinyl bench seats along light grey walls. Grey spotted linoleum floor. Chrome grab poles and overhead rails. Bright neutral fluorescent ceiling lights. Typical Moscow metro atmosphere. No people. No text overlay. No watermark. Photorealistic, 8k.",
+    "new": "Interior of a modern Moscow metro train car, symmetrical one-point perspective. Blue anti-vandal fabric bench seats along white plastic walls. Dark grey rubber flooring. Stainless steel poles and handrails. Bright cold LED strip lighting on ceiling. Clean modern design but showing signs of heavy public use. No people. No text overlay. No watermark. Photorealistic, 8k."
+  },
+  "defects": {
+    "damaged_seat": [
+      "FOCUS ON SEAT DAMAGE: Brown faux-leather severely deteriorated, web-like cracks, deep knife slashes exposing yellow foam, peeling edges and greasy stains. Depressive atmosphere.",
+      "FOCUS ON SEAT GRIME: Extremely dirty and worn leatherette, darkened surface from layers of grime, carved initials, scratched graffiti and sticky residue.",
+      "FOCUS ON SEAT DAMAGE: Blue vinyl with heavy wear, torn sections showing yellow padding, drink stains, black marker graffiti tags, and cigarette burn marks.",
+      "FOCUS ON SEAT WEAR: Blue anti-vandal fabric with dark greasy patches, pilling, mysterious wet stains, dried food crumbs and fraying edges.",
+      "FOCUS ON SEAT VANDALISM: Long knife slashes with bulging foam, sticky sticker residue, pen/marker scribbles and large burn holes under harsh fluorescent light.",
+      "FOCUS ON SEAT DETERIORATION: Brown faux-leather in terrible condition, massive rips, surface worn smooth and shiny from friction, chipped armrests."
+    ],
+    "damaged_floor": [
+      "FOCUS ON FLOOR DAMAGE: Grey-brown linoleum covered in dried white salt stains, chemical reagent residue, muddy footprints and wet slush trails.",
+      "FOCUS ON FLOOR WEAR: Heavily worn grey spotted linoleum, center aisle worn smooth, black rubber scuff marks and edges curling up near doors.",
+      "FOCUS ON FLOOR STAINS: Dark grey rubber floor with dried coffee spills, sticky soda puddles, ground-in dirt and scuff marks from heavy boots.",
+      "FOCUS ON FLOOR FILTH: Old linoleum with accumulated grime, sunflower seed shells, receipt paper, crushed cups and cracked threshold plates.",
+      "FOCUS ON FLOOR DAMAGE: Structural issues, long cracks with lifting edges, missing patches of linoleum revealing metal subfloor and bubbling surface.",
+      "FOCUS ON WINTER FLOOR: Wet grey slush puddles, muddy water footprints, white dried salt crystallization patterns and gritty sand on the surface."
+    ],
+    "damaged_metal": [
+      "FOCUS ON METAL DAMAGE: Heavily corroded chrome handrails, plating worn off exposing orange rust, rust streaks from mounting brackets and green oxidation.",
+      "FOCUS ON METAL WEAR: Dull matte finish grab poles, covered in dark greasy handprints, small dents and horizontal scratches from rings.",
+      "FOCUS ON WALL AND METAL DAMAGE: Scratched wood-grain panels, peeling cream paint on metal surfaces revealing rust, and corroded screw heads.",
+      "FOCUS ON METAL DAMAGE: Stainless steel with deep carved scratches, circular wear patterns, dents and rust spots forming at weld points.",
+      "FOCUS ON DOOR METAL DAMAGE: Dented chrome door strips, chipped paint on frames exposing bare metal, and shiny worn-out threshold plates.",
+      "FOCUS ON METAL CORROSION: Thick orange-brown rust on overhead rails, pitted vertical poles with chrome completely gone at waist height, clogged ventilation grilles."
+    ]
+  }
+}
